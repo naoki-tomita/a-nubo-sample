@@ -9,7 +9,7 @@ const Index: VFC<{ list: string[] }> = ({ list }) => {
     <div>
       <h1>Markdown blog</h1>
       <ul>
-        {list.map((it, i) => <li key={i}><a href={`/${it}`}>{list}</a></li>)}
+        {list.map((it, i) => <li key={i}><a href={`/${it}`}>{it}</a></li>)}
       </ul>
     </div>
   );
