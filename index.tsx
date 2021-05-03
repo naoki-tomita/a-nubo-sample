@@ -25,6 +25,7 @@ async function renderIndex() {
 }
 
 async function renderDoc(filename: string) {
+  filename = decodeURIComponent(filename);
   try {
     const doc = await readFile(`./docs/${filename}.md`).then(it => it.toString("utf-8")).then(md => marked(md)).catch(() => "404")
     const template = await readFile(`./docs.template.html`).then(it => it.toString("utf-8"));
